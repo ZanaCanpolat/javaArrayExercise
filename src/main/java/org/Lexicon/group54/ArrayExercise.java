@@ -39,13 +39,26 @@ public class ArrayExercise
         System.out.println("Sorted array of cities (Non case sensitive) = " + Arrays.toString(arrayOfCities));
 
 
+        System.out.println();
+
+
+        //Write a program which will copy the elements of one array into another
+        //array.
+        System.out.println(" ----------------- Array Exercise 4 ----------------- ");
+        arrayOfIntegers = new int[]{1, 15, 20};
+        int [] copyOfArray = arrayOfIntegers.clone();
+        System.out.println("Copied array = " + Arrays.toString(copyOfArray));
+        System.out.println("Original array = " + Arrays.toString(arrayOfIntegers));
+        System.out.println();
+
+
 
 
     }
 
     //This method will find and return the index of an element in the array.
     // If the element doesn’t exist your method should return -1 as value.
-    public static float indexOf(int[] array, int element)
+    public static int indexOf(int[] array, int element)
     {
         for (int i = 0; i < array.length; i++)
         {
@@ -56,7 +69,6 @@ public class ArrayExercise
         }
         return -1;
     }
-
 
 
 

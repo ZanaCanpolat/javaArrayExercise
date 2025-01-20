@@ -25,8 +25,21 @@ public class ArrayExercise
             System.out.println("Nr " +numberToFind +" is not in the array.");
         }
         else{
-        System.out.println("Nr " +numberToFind +" is at the position: " +(indexOf(arrayOfIntegers, 90)));
+        System.out.println("Nr " +numberToFind +" is at the position: " +(indexOf(arrayOfIntegers, numberToFind)));
         }
+        System.out.println();
+
+
+        // Write a program which will sort string array.
+        System.out.println("----------------- Array Exercise 3 ----------------- ");
+        String [] arrayOfCities = {"Paris", "London", "NewYork", "Stockholm"};
+        Arrays.sort(arrayOfCities); // This line sorts the array in alphabetical order. It is case sensitive.
+        System.out.println("Sorted array of cities (Case sensitive) = " + Arrays.toString(arrayOfCities));
+        Arrays.sort(arrayOfCities, String.CASE_INSENSITIVE_ORDER);  // This line sorts the array without considering the first letter in the word is capital or not.
+        System.out.println("Sorted array of cities (Non case sensitive) = " + Arrays.toString(arrayOfCities));
+
+
+
 
     }
 

@@ -37,8 +37,6 @@ public class ArrayExercise
         System.out.println("Sorted array of cities (Case sensitive) = " + Arrays.toString(arrayOfCities));
         Arrays.sort(arrayOfCities, String.CASE_INSENSITIVE_ORDER);  // This line sorts the array without considering the first letter in the word is capital or not.
         System.out.println("Sorted array of cities (Non case sensitive) = " + Arrays.toString(arrayOfCities));
-
-
         System.out.println();
 
 
@@ -74,8 +72,18 @@ public class ArrayExercise
         //out only the uneven numbers
         System.out.println(" ----------------- Array Exercise 7 ----------------- ");
         arrayOfIntegers = new int[]{1, 2, 4, 7, 9, 12};
-        printUnevenNumbers(arrayOfIntegers);
-        printEvenNumbers(arrayOfIntegers);
+        printUnevenNumbers(arrayOfIntegers);  // Prints out uneven numbers.
+        printEvenNumbers(arrayOfIntegers);// Prints out even numbers
+        System.out.println();
+
+        //Write a program which will remove the duplicate elements of a given
+        //array [20, 20, 40, 20, 30, 40, 50, 60, 50]
+        System.out.println(" ----------------- Array Exercise 8 ----------------- ");
+        arrayOfIntegers = new int[]{20, 20, 40, 20, 30, 40, 50, 60, 50};
+        int[] tempArrayOfIntegers = removeDuplicateElements(arrayOfIntegers);
+        System.out.println("Array without duplicate elements = " + Arrays.toString(removeDuplicateElements(arrayOfIntegers)));
+
+
 
 
 
@@ -85,6 +93,23 @@ public class ArrayExercise
 
     }
 
+    //This method will remove duplicate elements in an array and returns the array without duplicate elements.
+    //The method first sorts the given array to set the duplicate elements next to each other.
+    public static int[] removeDuplicateElements(int[] array)
+    {
+        Arrays.sort(array); // This line sorts the array in ascending order, if the array is not sorted the method will not work.
+        int [] tempArray = new int[array.length]; // Here is a problem this creates an array with the same length as the original array, which will give us an array with zeros at the end.
+        int j = 0;
+        for (int i = 0; i < array.length -1; i++)
+        {
+            if (array[i] != array[i + 1])
+            {
+                tempArray[j] = array[i];
+                j = i;
+            }
+        }
+        return tempArray;
+    }
 
     //This method will go through the array and print out only the uneven numbers.
     public static void printUnevenNumbers(int[] array)
@@ -109,8 +134,6 @@ public class ArrayExercise
             }
         }
     }
-
-
 
 
     //This method is used to calculate the average of the elements in the array.

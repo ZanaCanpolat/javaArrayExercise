@@ -85,20 +85,21 @@ public class ArrayExercise
 
 
 
-
-
-
-
-
-
     }
 
     //This method will remove duplicate elements in an array and returns the array without duplicate elements.
     //The method first sorts the given array to set the duplicate elements next to each other.
     public static int[] removeDuplicateElements(int[] array)
     {
+
+        // Here is a problem this creates an array with the same length as the original array, which will give us an array with zeros at the end.
+        // Possible solution is to search throw the array and check if it contains any zeros,
+        // if it holds zero, then we can ad this to the array that we
+        // iterate throw the new array and count all the zeros so that we can remove those and if the original array
+        // contained a zero we create a new array (array - how many zeros + zero for the original array if it contained a zero)
+        // return the array.
         Arrays.sort(array); // This line sorts the array in ascending order, if the array is not sorted the method will not work.
-        int [] tempArray = new int[array.length]; // Here is a problem this creates an array with the same length as the original array, which will give us an array with zeros at the end.
+        int [] tempArray = new int[array.length];
         int j = 0;
         for (int i = 0; i < array.length -1; i++)
         {
@@ -110,6 +111,7 @@ public class ArrayExercise
         }
         return tempArray;
     }
+
 
     //This method will go through the array and print out only the uneven numbers.
     public static void printUnevenNumbers(int[] array)

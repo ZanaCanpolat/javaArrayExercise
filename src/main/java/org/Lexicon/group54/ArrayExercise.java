@@ -58,15 +58,48 @@ public class ArrayExercise
         String [][] arrayCountryCity = {{"France", "Paris"} , {"Sweden", "Stockholm"}};
         printTwoDimensionalArray(arrayCountryCity);
         //The line of code below is used to print out multidimensional arrays.
-//      System.out.println("Arrays.deepToString() = " + Arrays.deepToString(arrayCountryCity));
+        //System.out.println("Arrays.deepToString() = " + Arrays.deepToString(arrayCountryCity));
+        System.out.println();
+
+
+        //Write a program which will set up an array to hold the next values in this
+        //order: 43, 5, 23, 17, 2, 14 and print the average of these 6 numbers.
+        System.out.println(" ----------------- Array Exercise 6 ----------------- ");
+        arrayOfIntegers = new int[]{43, 5, 23, 17, 2, 14};
+        System.out.println("Average of the elements in the array = " + calculateAverage(arrayOfIntegers));
+        System.out.println();
+
+
+        //Write a program which will set up an array to hold 10 numbers and print
+        //out only the uneven numbers
+        System.out.println(" ----------------- Array Exercise 7 ----------------- ");
+
+
+
+
 
 
     }
+
+    //This method is used to calculate the average of the elements in the array.
+    public static float calculateAverage(int[] array)
+    {
+        float sum = 0;
+        for (int i = 0; i < array.length; i++)
+        {
+            sum += array[i];
+        }
+        return sum / array.length;
+    }
+
 
     //The method below prints out two dimensional array. It takes a two dimensional array as a parameter, iterates
     // throw the array and prints out the elements.
     public static void printTwoDimensionalArray(String[][] array)
     {
+        // This line of code prints out two dimensional array {1, 2}{1, 2}
+        // System.out.println("Arrays.deepToString() = " + Arrays.deepToString(array));
+
         for (int i = 0; i < array.length; i++)
         {
             for (int j = 0; j < array[i].length; j++)

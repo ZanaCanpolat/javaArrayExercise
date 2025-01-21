@@ -52,8 +52,29 @@ public class ArrayExercise
         System.out.println();
 
 
+        //Create a two-dimensional string array [2][2]. Assign values to the
+        //2-dimentional array containing any Country and City.
+        System.out.println(" ----------------- Array Exercise 5 ----------------- ");
+        String [][] arrayCountryCity = {{"France", "Paris"} , {"Sweden", "Stockholm"}};
+        printTwoDimensionalArray(arrayCountryCity);
+        //The line of code below is used to print out multidimensional arrays.
+//      System.out.println("Arrays.deepToString() = " + Arrays.deepToString(arrayCountryCity));
 
 
+    }
+
+    //The method below prints out two dimensional array. It takes a two dimensional array as a parameter, iterates
+    // throw the array and prints out the elements.
+    public static void printTwoDimensionalArray(String[][] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            for (int j = 0; j < array[i].length; j++)
+            {
+                System.out.print(array[i][j] +" ");
+            }
+            System.out.println();
+        }
     }
 
     //This method will find and return the index of an element in the array.

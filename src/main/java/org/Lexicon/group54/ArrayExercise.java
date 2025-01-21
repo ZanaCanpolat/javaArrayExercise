@@ -73,6 +73,10 @@ public class ArrayExercise
         //Write a program which will set up an array to hold 10 numbers and print
         //out only the uneven numbers
         System.out.println(" ----------------- Array Exercise 7 ----------------- ");
+        arrayOfIntegers = new int[]{1, 2, 4, 7, 9, 12};
+        printUnevenNumbers(arrayOfIntegers);
+        printEvenNumbers(arrayOfIntegers);
+
 
 
 
@@ -80,6 +84,34 @@ public class ArrayExercise
 
 
     }
+
+
+    //This method will go through the array and print out only the uneven numbers.
+    public static void printUnevenNumbers(int[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            if (array[i] % 2 != 0)
+            {
+                System.out.println("Uneven number = " + array[i]);
+            }
+        }
+    }
+
+    //This method will go through the array and print out only the uneven numbers.
+    public static void printEvenNumbers(int[] array)
+    {
+        for (int i = 0; i < array.length; i++)
+        {
+            if (array[i] % 2 == 0)
+            {
+                System.out.println("Even number = " + array[i]);
+            }
+        }
+    }
+
+
+
 
     //This method is used to calculate the average of the elements in the array.
     public static float calculateAverage(int[] array)

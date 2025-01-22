@@ -84,9 +84,31 @@ public class ArrayExercise
         arrayOfIntegers = new int[]{20, 20, 40, 20, 30, 40, 50, 60, 50};
         int[] tempArrayOfIntegers = removeDuplicateElements(arrayOfIntegers);
         System.out.println("Array without duplicate elements = " + Arrays.toString(removeDuplicateElements(arrayOfIntegers)));
+        System.out.println();
+
+        //Write a method which will add elements in an array.
+        //Remember that arrays are fixed in size so you need to come up with a solution to “expand” the array.
+        System.out.println(" ----------------- Array Exercise 9 ----------------- ");
+        arrayOfIntegers = new int[]{1, 2, 3, 4, 5};
+        int[] newArrayOfIntegers = addElement(arrayOfIntegers, 6);
+        System.out.println("Array before adding element = " + Arrays.toString(arrayOfIntegers));
+        System.out.println("Array with added element = " + Arrays.toString(newArrayOfIntegers));
 
 
 
+    }
+
+    private static int[] addElement(int[] array, int element) {
+        //The method below is build in the object ArrayUtils from the library Apache Commons Lang.
+        //return ArrayUtils.add(array, element);
+
+        int [] tempArray = new int[array.length + 1];
+        for (int i = 0; i < array.length; i++)
+        {
+            tempArray[i] = array[i];
+        }
+        tempArray[array.length] = element;
+        return tempArray;
     }
 
     //This method will remove duplicate elements in an array and returns the array without duplicate elements.

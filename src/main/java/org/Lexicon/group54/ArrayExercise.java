@@ -93,11 +93,33 @@ public class ArrayExercise
         int[] newArrayOfIntegers = addElement(arrayOfIntegers, 6);
         System.out.println("Array before adding element = " + Arrays.toString(arrayOfIntegers));
         System.out.println("Array with added element = " + Arrays.toString(newArrayOfIntegers));
+        System.out.println();
 
+        // Write a program which will represent multiplication table stored in multidimensional array
+        System.out.println(" ----------------- Array Exercise 10 ----------------- ");
+        int [][] multiplicationTable = createMultiplicationTable(10);
+        printTwoDimensionalArray(multiplicationTable);  // Created overloaded method to print out two dimensional int array.
+        System.out.println();
 
-
+        
     }
 
+    //This method will create a multiplication table and return the table, it takes a value as a parameter for the size of the table.
+    public static int[][] createMultiplicationTable(int size)
+    {
+        int [][] multiplicationTable = new int[size][size];
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                multiplicationTable[i][j] = ((i+1) *(j+1));    //Adding +1 to i and j to start the table from 1 and not 0
+            }
+        }
+        return multiplicationTable;
+    }
+
+
+    //This method will add an element to an existing array and return the new array.
     private static int[] addElement(int[] array, int element) {
         //The method below is build in the object ArrayUtils from the library Apache Commons Lang.
         //return ArrayUtils.add(array, element);
@@ -228,6 +250,23 @@ public class ArrayExercise
             System.out.println();
         }
     }
+
+        //The method below prints out two dimensional array. It takes a two dimensional array as a parameter, iterates
+        // throw the array and prints out the elements.
+        public static void printTwoDimensionalArray(int [][] array)
+        {
+            // This line of code prints out two dimensional array {1, 2}{1, 2}
+            // System.out.println("Arrays.deepToString() = " + Arrays.deepToString(array));
+
+            for (int i = 0; i < array.length; i++)
+            {
+                for (int j = 0; j < array[i].length; j++)
+                {                                                                                                           
+                    System.out.print(array[i][j] +  "\t");
+                }
+                System.out.println();
+            }
+        }
 
     //This method will find and return the index of an element in the array.
     // If the element doesn’t exist your method should return -1 as value.

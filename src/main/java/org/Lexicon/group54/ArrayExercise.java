@@ -1,6 +1,8 @@
 package org.Lexicon.group54;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class ArrayExercise
 {
@@ -92,16 +94,10 @@ public class ArrayExercise
     public static int[] removeDuplicateElements(int[] array)
     {
 
-        // Here is a problem this creates an array with the same length as the original array, which will give us an array with zeros at the end.
-        // Possible solution is to search throw the array and check if it contains any zeros,
-        // if it holds zero, then we can ad this to the array that we
-        // iterate throw the new array and count all the zeros so that we can remove those and if the original array
-        // contained a zero we create a new array (array - how many zeros + zero for the original array if it contained a zero)
-        // return the array.
         Arrays.sort(array); // This line sorts the array in ascending order, if the array is not sorted the method will not work.
         int [] tempArray = new int[array.length];
         int j = 0;
-        for (int i = 0; i < array.length -1; i++)
+        for (int i = 0; i < array.length-1; i++)
         {
             if (array[i] != array[i + 1])
             {
@@ -109,8 +105,52 @@ public class ArrayExercise
                 j = i;
             }
         }
+        tempArray[j] = array[array.length - 1];  //This line is used to add the last element in the array to the new array, without it it does not add the last element.
+
+        return ArrayUtils.removeAllOccurrences(tempArray, 0); // This line removes all zeros from the array.
+
+    }
+
+      /*Ask Elnaz about the method below.
+        // Here is a problem this creates an array with the same length as the original array, which will give us an array with zeros at the end.
+        // Possible solution is to search throw the array and check if it contains any zeros,
+        // if it holds zero, then we can ad this to the array that we
+        // iterate throw the new array and count all the zeros so that we can remove those and if the original array
+        // contained a zero we create a new array (array - how many zeros + zero for the original array if it contained a zero)
+        // return the array.
+        Arrays.sort(array); // This line sorts the array in ascending order, if the array is not sorted the method will not work.
+        int countingZero = 0;
+        int [] tempArray = new int[array.length];
+        int j = 0;
+        for (int i = 0; i < array.length -1; i++)
+        {
+            if (array[i] == 0)
+            {
+              countingZero++;
+            }
+            if (array[i] != array[i + 1])
+            {
+                tempArray[j] = array[i];
+                j = i;
+            }
+        }
+
+        //If no Zeros was in the array then clean the array and return it, If zero found in array, clean the unnecessary
+        //zeros and return the array
+        if(countingZero == 0)
+        {
+            for (int i = 0; i < tempArray.length -1; i++)
+            {
+                if (tempArray[i] == 0)
+                {
+                    countingZero++;
+                }
+            }
+        }
         return tempArray;
     }
+
+       */
 
 
     //This method will go through the array and print out only the uneven numbers.
